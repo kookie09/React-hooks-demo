@@ -8,7 +8,7 @@ const Ingredients = () => {
   const [userIngredients, setUserIngredients] = useState([]);
 
   useEffect(() => {
-    fetch('https://react-hooks-demo-dd409.firebaseio.com/ingredients.json')
+    fetch('https://react-hooks-update.firebaseio.com/ingredients.json')
       .then(response => response.json())
       .then(responseData => {
         const loadedIngredients = [];
@@ -28,7 +28,7 @@ const Ingredients = () => {
   }, [userIngredients]);
 
   const addIngredientHandler = ingredient => {
-    fetch('https://react-hooks-demo-dd409.firebaseio.com/ingredients.json', {
+    fetch('https://react-hooks-update.firebaseio.com/ingredients.json', {
       method: 'POST',
       body: JSON.stringify(ingredient),
       headers: { 'Content-Type': 'application/json' }
